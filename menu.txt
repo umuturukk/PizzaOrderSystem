@@ -1,0 +1,18 @@
+***************************************
+    Lütfen Bir Pizza Tabanı Seçiniz 
+***************************************
+    Pizza Tabanları :
+1 --> Klasik
+2 --> Margarita
+3 --> Türk Pizza
+4 --> Sade Pizza
+***************************************
+    Sos Tercihinizi Yapınız : 
+11 --> Zeytin
+12 --> Çeşitli Mantarlar
+13 --> Keçi Peyniri
+14 --> Et
+15 --> Soğan
+16 --> Mısır
+***************************************
+Bizi tercih ettiğiniz için teşekkür ederiz.

@@ -1,6 +1,7 @@
 from datetime import datetime
 import time
-import Pizza
+from pizza import Pizza
+import csv
 
 def main():
     def odeme():
@@ -11,11 +12,13 @@ def main():
         krediKartNo = input("Kart numaranizi giriniz: ")
         krediKartSifre = input("Kart şifrenizi giriniz: ")
 
-        with open("odeme.txt", "a", encoding = "utf-8") as odeme:
-            odeme.write("\n" + ad + ", " + tcNo + ", " + krediKartNo + ", " + krediKartSifre + ", " + str(datetime.now().date()))
-            odeme.close()
+        veriler = [[ad, tcNo, krediKartNo, krediKartNo, krediKartSifre,datetime.now().date()]]
 
-        print("Ödeme işlemi başarıyla tamamlandı. Siparişiniz en kısa sürede ulaştırılacaktır.")
+        with open("orders_database.csv", "a", newline = '') as odeme:
+            odeme2 = csv.writer(odeme)
+            odeme2.writerows(veriler)
+
+        print("Ödeme işlemi başariyla tamamlandi. Siparişiniz en kisa sürede ulaştirilacaktir.")
 
     while True:
         secim = input("Yapmak işlediğiniz işlemi seçiniz: ")
@@ -24,46 +27,46 @@ def main():
                 contents = menu.read()
                 print(contents)
 
-            pizzaSecimi = input("Menüye göz gezdirip sipariş etmek istediğiniz pizzaya karşılık gelen numarayı tuşlayınız: ")
+            pizzaSecimi = input("Menüye göz gezdirip sipariş etmek istediğiniz pizzaya karşilik gelen numarayi tuşlayiniz: ")
             if pizzaSecimi == "1":
                 margherita = Pizza.Margherita()
                 bill = margherita.price
                 print("Margherita pizza seçiminde bulundunuz.")
                 margherita.get_description()
 
-                exMalzeme = input("Pizzanıza ek olarak eklemek istediğiniz malzemeyi tuşlayınız (istemiyorsanız 'h'): ")
+                exMalzeme = input("Pizzaniza ek olarak eklemek istediğiniz malzemeyi tuşlayiniz (istemiyorsaniz 'h'): ")
                 if exMalzeme == "h":
-                    print(f'Sos istemediniz. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Sos istemediniz. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "11":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak zeytin eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak zeytin eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "12":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "13":
                     bill += 7
-                    print(f'Pizzanıza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "14":
                     bill += 10
-                    print(f'Pizzanıza ekstra malzeme olarak et eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak et eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "15":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak soğan eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak soğan eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "16":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak mısır eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak misir eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
 
@@ -73,39 +76,39 @@ def main():
                 print("Pepperoni pizza seçiminde bulundunuz.")
                 pepperoni.get_description()
 
-                exMalzeme = input("Pizzanıza ek olarak eklemek istediğiniz malzemeyi tuşlayınız (istemiyorsanız 'h'): ")
+                exMalzeme = input("Pizzaniza ek olarak eklemek istediğiniz malzemeyi tuşlayiniz (istemiyorsaniz 'h'): ")
                 if exMalzeme == "h":
-                    print(f'Sos istemediniz. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Sos istemediniz. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "11":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak zeytin eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak zeytin eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "12":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "13":
                     bill += 7
-                    print(f'Pizzanıza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "14":
                     bill += 10
-                    print(f'Pizzanıza ekstra malzeme olarak et eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak et eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "15":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak soğan eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak soğan eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "16":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak mısır eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak misir eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
 
@@ -115,39 +118,39 @@ def main():
                 print("Dört peynirli pizza seçiminde bulundunuz.")
                 fourCheese.get_description()
 
-                exMalzeme = input("Pizzanıza ek olarak eklemek istediğiniz malzemeyi tuşlayınız (istemiyorsanız 'h'): ")
+                exMalzeme = input("Pizzaniza ek olarak eklemek istediğiniz malzemeyi tuşlayiniz (istemiyorsaniz 'h'): ")
                 if exMalzeme == "h":
-                    print(f'Sos istemediniz. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Sos istemediniz. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "11":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak zeytin eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak zeytin eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "12":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "13":
                     bill += 7
-                    print(f'Pizzanıza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "14":
                     bill += 10
-                    print(f'Pizzanıza ekstra malzeme olarak et eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak et eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "15":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak soğan eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak soğan eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "16":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak mısır eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak misir eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
 
@@ -157,50 +160,50 @@ def main():
                 print("Tavuklu barbekülü pizza seçiminde bulundunuz.")
                 bbqChicken.get_description()
 
-                exMalzeme = input("Pizzanıza ek olarak eklemek istediğiniz malzemeyi tuşlayınız (istemiyorsanız 'h'): ")
+                exMalzeme = input("Pizzaniza ek olarak eklemek istediğiniz malzemeyi tuşlayiniz (istemiyorsaniz 'h'): ")
                 if exMalzeme == "h":
-                    print(f'Sos istemediniz. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Sos istemediniz. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "11":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak zeytin eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak zeytin eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "12":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak çeşitli mantarlar eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "13":
                     bill += 7
-                    print(f'Pizzanıza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak keçi peyniri eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "14":
                     bill += 10
-                    print(f'Pizzanıza ekstra malzeme olarak et eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak et eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "15":
                     bill += 3
-                    print(f'Pizzanıza ekstra malzeme olarak soğan eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak soğan eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
                 elif exMalzeme == "16":
                     bill += 5
-                    print(f'Pizzanıza ekstra malzeme olarak mısır eklenecektir. Pizzanızın son fiyatı {bill} ₺.')
+                    print(f'Pizzaniza ekstra malzeme olarak misir eklenecektir. Pizzanizin son fiyati {bill} ₺.')
                     odeme()
                     break
             else:
-                print("Henüz 4 adet pizza çeşidimiz bulunmaktadır. Menüye göz gezdirip istediğiniz pizzaya karşılık gelen numarayı tuşlayınız.(1-4)")
+                print("Henüz 4 adet pizza çeşidimiz bulunmaktadir. Menüye göz gezdirip istediğiniz pizzaya karşilik gelen numarayi tuşlayiniz.(1-4)")
                 
         elif secim == "0":
-            print("Sistemden çıkış yapılıyor...")
+            print("Sistemden çikiş yapiliyor...")
             break
 
         else:
-            print("Lütfen 0 veya 1 seçeneklerinden birini tuşlayınız.")
+            print("Lütfen 0 veya 1 seçeneklerinden birini tuşlayiniz.")
             continue
 
 if __name__ == "__main__":

@@ -1,60 +1,60 @@
 class Pizza:
     def __init__(self):
-        self.margherita = Margherita()
-        self.pepperoni = Pepperoni()
-        self.fourcheese = FourCheese()
-        self.bbqchicken = BbqChicken()
+        self.margherita = self.Margherita()
+        self.pepperoni = self.Pepperoni()
+        self.fourcheese = self.FourCheese()
+        self.bbqchicken = self.BbqChicken()
     
     def get_cost(self):
-        print(f"{self.name}'in fiyatı {self.price} ₺'dir.")
+        print(f"{self.name}'in fiyati {self.price} ₺'dir.")
     
     def get_description(self):
         print(self.description)
     
-    class Margherita(Pizza):
+    class Margherita():
         def __init__(self):
             self.name = "Margherita"
             self.price = 15
-            self.description = "Margarita pizza, domates, mozarella, fesleğen, zeytinyağı ve tuzla yapılan Napoli pizzasıdır."
+            self.description = "Margarita pizza, domates, mozarella, fesleğen, zeytinyaği ve tuzla yapilan Napoli pizzasidir."
     
         def get_cost(self):
             super().get_cost()
             
         def get_description(self):
-            super().get_description()
+            print(self.description)
             
-    class Pepperoni(Pizza):
+    class Pepperoni():
         def __init__(self):
             self.name = "Pepperoni"
             self.price = 25
-            self.description = "Pepperoni pizza, pepperoni, pepperoni sos, mozerella peyniri, mısır, yeşil zeytin ve siyah zeytin içerir."
+            self.description = "Pepperoni pizza, pepperoni, pepperoni sos, mozerella peyniri, misir, yeşil zeytin ve siyah zeytin içerir."
         
         def get_cost(self):
             super().get_cost()
             
         def get_description(self):
-            super().get_description()
+            print(self.description)
             
-    class FourCheese(Pizza):
+    class FourCheese():
         def __init__(self):
             self.name = "Dört Peynirli Pizza"
             self.price = 20
-            self.description = "Dört peynirli pizza, İtalyan mutfağından bir pizza çeşididir. Dört peynir birlikte eritilir ve domates sosu olmadan pizza hamurunun üzerine konur."
+            self.description = "Dört peynirli pizza, İtalyan mutfağindan bir pizza çeşididir. Dört peynir birlikte eritilir ve domates sosu olmadan pizza hamurunun üzerine konur."
         
         def get_cost(self):
             super().get_cost()
         
         def get_description(self):
-            super().get_description()
+            print(self.description)
             
-    class BbqChicken(Pizza):
+    class BbqChicken():
         def __init__(self):
             self.name = "Tavuklu Barbekü soslu Pizza"
             self.price = 25
-            self.description = "İçeriğinde tavuk, barbekü sos, mısır, soğan, kapya biber ve az miktarda peynir bulunur."
+            self.description = "İçeriğinde tavuk, barbekü sos, misir, soğan, kapya biber ve az miktarda peynir bulunur."
     
         def get_cost(self):
             super().get_cost()
         
         def get_description(self):
-            super().get_description()
+            print(self.description)

@@ -1,18 +1,18 @@
 ***************************************
-    Lütfen Bir Pizza Tabanı Seçiniz 
+    Lütfen Bir Pizza Çeşidini Seçiniz 
 ***************************************
     Pizza Tabanları :
-1 --> Klasik
-2 --> Margarita
-3 --> Türk Pizza
-4 --> Pepperoni Pizza
+1 --> Margarita (25 ₺)
+2 --> Pepperoni (20 ₺)
+3 --> Dört Peynirli Pizza (25 ₺)
+4 --> Tavuklu Barbekülü Pizza (25 ₺)
 ***************************************
     Sos Tercihinizi Yapınız : 
-11 --> Zeytin
-12 --> Çeşitli Mantarlar
-13 --> Keçi Peyniri
-14 --> Et
-15 --> Soğan
-16 --> Mısır
+11 --> Zeytin (3 ₺)
+12 --> Çeşitli Mantarlar (5 ₺)
+13 --> Keçi Peyniri (7 ₺)
+14 --> Et (10 ₺)
+15 --> Soğan (3 ₺)
+16 --> Mısır (5 ₺)
 ***************************************
 Bizi tercih ettiğiniz için teşekkür ederiz.

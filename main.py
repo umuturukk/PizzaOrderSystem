@@ -21,7 +21,7 @@ def main():
         print("Ödeme işlemi başariyla tamamlandi. Siparişiniz en kisa sürede ulaştirilacaktir.")
 
     while True:
-        secim = input("Yapmak işlediğiniz işlemi seçiniz: ")
+        secim = input("Menüyü görüntülemek için 1'i sistemden çikmak için 0'i tuşlayiniz: ")
         if secim == "1":
             with open("menu.txt", "r", encoding = "utf-8") as menu:
                 contents = menu.read()

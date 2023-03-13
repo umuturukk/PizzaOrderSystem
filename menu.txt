@@ -5,7 +5,7 @@
 1 --> Klasik
 2 --> Margarita
 3 --> Türk Pizza
-4 --> Sade Pizza
+4 --> Pepperoni Pizza
 ***************************************
     Sos Tercihinizi Yapınız : 
 11 --> Zeytin

@@ -12,7 +12,7 @@ def main():
         krediKartNo = input("Kart numaranizi giriniz: ")
         krediKartSifre = input("Kart şifrenizi giriniz: ")
 
-        veriler = [[ad, tcNo, krediKartNo, krediKartNo, krediKartSifre,datetime.now().date()]]
+        veriler = [[ad, tcNo, krediKartNo, krediKartSifre, datetime.now().date()]]
 
         with open("orders_database.csv", "a", newline = '') as odeme:
             odeme2 = csv.writer(odeme)

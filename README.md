@@ -1,5 +1,5 @@
 # PizzaOrderSystem  
-Python ile basit bir pizza sipariş sistemi.  
+### Python ile basit bir pizza sipariş sistemi.  
 **pizza.py dosyasında ilgili Pizza sınıfının ve iç sınıf olarak pizza çeşitlerinin kodlanması yapıldı.**  
 **main.py dosyasında siparişi konsol üzerinden vermek için gerekli kodlar while döngüsü içerisinde yazıldı.**  
 

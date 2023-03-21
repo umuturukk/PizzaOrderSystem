@@ -5,4 +5,3 @@
 - **order_database.csv dosyası ödeme esnasında alınan bilgilerin kaydını tutan bir csv dosyasıdır.**  
 - **menu.txt dosyası müşteriye gösterilecek olan menüyü txt halinde tutan metin dosyasıdır.**  
 
-*Bu benim ilk projem ve bu konuda oldukça deneyimsizdim. Projede yalnız çalıştım kendime katabildiğim kadar yeni bilgiler katmaya özen gösterdim. Konsol uygulaması bazında çok daha iyi pizza sipariş sistemi geliştirilebilirdi elbette, umarım daha da geliştikçe güzel şeyler yapabilirim. Bu imkanı sunduğunuz için teşekkürler :)*
